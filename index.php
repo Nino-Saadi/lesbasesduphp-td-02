@@ -17,9 +17,9 @@ $city = 'paris';
 
 $mess4 = "Bonjour, je m'appelle $firstName $lastName, j'ai $age et j'habite $city";
 // 5. Nouvelle chaîne formée avec des variables (newStringSingleQuotes)
-// $mess5 = "Bonjour, je m'appelle "ucfirst($firstName)" "strtoupper($lastame)", j'ai $age et j'habite "ucfirst($city)"";
-      //strtoupper(lastame)
-      // The ucfirst($firstName)
+      // $lastName = strtoupper($lastName)
+      // $firstName = ucfirst($firstName)
+      // $mess5 = "Bonjour, je m'appelle "ucfirst($firstName)" "strtoupper($lastame)", j'ai $age et j'habite "ucfirst($city)"";
 // 6. Nouvelle chaine modifiée (revisedNewStringSimpleQuotes)
 
 
@@ -44,14 +44,49 @@ $matieres = [
 ];
 
 // 11. fusion de deux tableaux (coursesGrades)
-
+$coursesGrades = arraycombine($matieres, $notes);
 
 // copie du tableau pour ne écraser l'original (revisedCoursesGrades)
+$replace = [
+  'algorithme' => 10,
+  'marketing' => 13,
+];
 
+$stringSet = array_replace($coursesGrades, $replace);
 
 // 12. Inversion des notes d'algorithmique et de marketing
 
 // 13. Tableau de notes des étudiants (students)
+$students =[
+  'eleve1' =>[
+    'html/css'=> 12,
+    'algorithme'=> 18,
+    'anglais'=> 10 ,
+    'marketing'=> 8,
+    'ui/ux'=> 15,
+  ],
+  'eleve2' =>[
+    'html/css'=> 6,
+    'algorithme'=> 12,
+    'anglais'=> 19 ,
+    'marketing'=> 16,
+    'ui/ux'=> 14,
+  ],
+  'eleve3' =>[
+    'html/css'=> 16,
+    'algorithme'=> 12,
+    'anglais'=> 10,
+    'marketing'=> 11 ,
+    'ui/ux'=> 9,
+  ],
+  'eleve4' =>[
+    'html/css'=> 8,
+    'algorithme'=> 11,
+    'anglais'=> 13,
+    'marketing'=> 12,
+    'ui/ux'=>11 ,
+  ],
+]
 
 ?>
 <!DOCTYPE html>
@@ -165,7 +200,7 @@ $matieres = [
                         <p class="card-text">
                             <!-- question 11 -->
                             <pre>
-                                 <!-- afficher votre réponse ici -->
+                                 <?php var_dump($stringSet)?>
                             </pre>
                         </p>
                     </div>
